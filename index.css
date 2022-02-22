@@ -1,0 +1,108 @@
+/* start styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=VT323&display=swap');
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #444;
+    font-family: 'Poppins';
+    color: #bbb;
+}
+
+li,
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-weight: 700;
+    line-height: 2;
+}
+
+main {
+    padding: 140px 40px 40px;
+}
+
+
+/* solution styles */
+
+header {
+    background: #333;
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-align: right;
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#menu {
+    position: relative;
+}
+
+#mobile-nav-button {
+    box-sizing: content-box;
+    position: relative;
+    cursor: pointer;
+    left: 30px;
+    top: 1.6em;
+    z-index: 1;
+    width: 20px;
+    height: 15px;
+    margin: 6px 0;
+    background: #333;
+}
+
+#mobile-nav-button::before,
+#mobile-nav-button::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: #bbb;
+    transition: transform 250ms ease-out, box-shadow 250ms ease-out;
+}
+
+#mobile-nav-button::after {
+    transform: translateY(6px);
+    box-shadow: 0 6px 0 #bbb;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    padding: 5em 50px 0 30px;
+    background: #222;
+    transition: transform 250ms ease-in;
+}
+
+nav a {
+    color: #bbb;
+}
+
+#menu.open nav {
+    transition: transform 250ms ease-out;
+    transform: translateX(0);
+}
+
+#menu.open #mobile-nav-button::before {
+    transform: translateY(6px) rotate(45deg);
+}
+
+#menu.open #mobile-nav-button::after {
+    transform: translateY(6px) rotate(-45deg);
+    box-shadow: 0 0 0 #bbb;
+}
+
+
+/* open state */
+
+
+/* transitions */
