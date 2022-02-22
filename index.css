@@ -23,7 +23,7 @@ ul {
 }
 
 main {
-    padding: 140px 40px 40px;
+    padding: 80px 40px 40px;
 }
 
 
@@ -51,7 +51,7 @@ header {
     cursor: pointer;
     left: 30px;
     top: 1.6em;
-    z-index: 1;
+    z-index: 3;
     width: 20px;
     height: 15px;
     margin: 6px 0;
@@ -81,6 +81,7 @@ nav {
     padding: 5em 50px 0 30px;
     background: #222;
     transition: transform 250ms ease-in;
+    z-index: 2;
 }
 
 nav a {
@@ -103,6 +104,24 @@ nav a {
 
 
 /* open state */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    background-color: transparent;
+    transition: background-color 250ms ease-in;
+}
+
+#menu.open #overlay {
+    transition: background-color 250ms ease-out;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
 
 /* transitions */
